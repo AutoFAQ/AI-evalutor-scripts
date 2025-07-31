@@ -1,15 +1,18 @@
 # AI-Evaluator
 
 ## Данные для тестирования:
-- docx - ВКонтакте+API,+Direct-docx.docx
-- pdf - AKB-ВКонтакте API, Direct-180725-145454.pdf
-- website: https://autofaq.ai/
-- confluence: https://deephack.atlassian.net/wiki/spaces/AKB
+
+- Docx - ВКонтакте+API,+Direct-docx.docx (в репозитории)
+- Pdf - AKB-ВКонтакте API, Direct-180725-145454.pdf (в репозитории)
+- Confluence: https://deephack.atlassian.net/wiki/spaces/AKB (открытый)
+- Website: https://autofaq.ai/ (открытый)
+
+Вопросы и ответы по каждому типу данных находятся в questions_and_answers.xlsx.
 
 ## Инструкция по установке и запуску
 
 1. `pip install -r requirements.txt`
-2. Нужно получить ответы LLM и ответы человека и положить их input.xlsx. В input.xlsx есть примеры.
+2. Нужно получить ответы LLM и ответы человека и положить их input.xlsx. В input.xlsx есть уже готовые ответы.
 В поле Ответ Support Team - ответ человека. Далее нужно оценить Точность и Полноту людьми согласно RULES из evaluate_precision_recall.py.
 3. Для оценки точности и полноты с LLM нужно запустить: `python evaluate_precision_recall.py`. В коде можно поменять `model = "o4-mini"` на gpt-4.1. Также нужно выполнить `export OPENAI_API_KEY`.
 4. После выполнения evaluate_precision_recall.py будет файл output.xlsx. В нем будут оценки от LLM. Эти оценки нужно скопировать в input.xlsx, после ответа каждой модели в конце после оценок людьми. См. пример в Сравнение ответов разных AI систем -v2.xlsx.
